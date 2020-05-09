@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="Dain Kim">
+    <meta name="keywords" content="to do list, 투두리스트, 자바스크립트 투두리스트, javascript">
+    <meta name="description" content="바닐라 자바스크립트로 만드는 투두리스트">
+
+    <meta property="og:title" content="To do list!">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="간단한 투두리스트">
+    <title>
+        To do list!
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="title">
+                To Do List
+            </div>
+            <div class="clock">
+
+            </div>
+        </header>
+        <div id="box-container">
+            <div class="box">
+                <div class="sec-tit">
+                    <p>
+                        I have to do...
+                    </p>
+                </div>
+                <div class="enter-task">
+                    <input type="text" placeholder="할 일을 입력하세요" class="inputTask" autofocus>
+                    <button class="addTask">입력</button>
+                </div>
+                <button class="a-delete">전체 삭제</button>
+                <div class="task-list">
+                    <div class="task">
+                        <button class="done-item"></button>
+                        <div class="task-item">파이썬 알고리즘</div>
+                        <button class="del-item"></button>
+                    </div>
+                    <div class="task">
+                        <button class="done-item"></button>
+                        <div class="task-item">파이썬 알고리즘</div>
+                        <button class="del-item"></button>
+                    </div>
+                    <div class="task">
+                        <button class="done-item"></button>
+                        <div class="task-item">파이썬 알고리즘</div>
+                        <button class="del-item"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="sec-tit done-list">
+                    <p>
+                        Done!
+                    </p>
+                </div>
+                <button class="a-delete">전체 삭제</button>
+                <div class="task-list done">
+                    <div class="task done">
+                        <button class="done-item"></button>
+                        <div class="task-item">파이썬 알고리즘</div>
+                        <button class="del-item"></button>
+                    </div>
+                    <div class="task done">
+                        <button class="done-item"></button>
+                        <div class="task-item">파이썬 알고리즘</div>
+                        <button class="del-item"></button>
+                    </div>
+                    <div class="task done">
+                        <button class="done-item"></button>
+                        <div class="task-item">파이썬 알고리즘</div>
+                        <button class="del-item"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+            <p>
+                2020 Dain Kim
+                <span id="logo">로고</span>
+            </p>
+        </footer>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

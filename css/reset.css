@@ -1,0 +1,16 @@
+@charset "utf-8";
+html, body, p { 
+    margin: 0;
+    padding: 0;
+}    
+p, input {
+    line-height: 1;
+}
+::selection {
+    background: rgb(37, 48, 202); 
+    color: #fff;
+}
+/* HTML5 display-role reset for older browsers */
+header, footer { 
+    display: block; 
+}

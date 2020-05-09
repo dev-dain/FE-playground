@@ -1,0 +1,165 @@
+@charset "utf-8";
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+* {
+  font-family: 'Spoqa Han Sans', 'Sans-serif'; }
+
+#wrap {
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto;
+}
+#header {
+    background: #000;
+    color: #fff;
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    min-height: 120px;
+    text-align: center;
+    box-sizing: border-box;
+    border-bottom: 2px dashed #fff;
+}
+#header .title {
+    width: 100%;
+    font-size: 40px;
+    font-size: 2.5rem;
+    font-weight: bold; 
+}
+#header .clock {
+    position: absolute;
+    width: 30%;
+    font-size: 27.2px;
+    font-size: 1.7rem;
+}
+
+#box-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 80%;
+    height: 81vh;
+    margin: 0 auto;
+}
+.box {
+    width: 50%;
+    padding: 0 2.5%;
+    box-sizing: border-box;
+}
+.box > div {
+    width: 100%;
+    text-align: center;
+}
+.box .sec-tit {
+    box-sizing: border-box;
+    margin: 25px 0;
+    font-size: 24px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 3.5%;
+    text-decoration-line: underline;
+}
+.box .done-list {
+    height: 8%;
+}
+.box .enter-task {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 4.5%;
+}
+.box .inputTask {
+    width: 75%;
+    border: none;
+    border-bottom: 2px solid black;
+    box-sizing: border-box;
+    padding: 0 10px;
+    height: 40px;
+}
+.box .input-null {
+    border: 2px solid red;
+}
+.box button {
+    border-radius: 15px;
+    width: 15%;
+    height: 40px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.box .addTask {
+    background: rgba(39, 102, 238, 0.9);
+}
+.box .addTask:hover {
+    background: rgba(39, 102, 238, 1.0);
+}
+.box .a-delete {
+    width: 30%;
+    height: 5%;
+    margin: 20px 35%;
+    background: rgba(238, 39, 39, 0.9);
+}
+.box .a-delete:hover {
+    background: rgba(238, 39, 39, 1.0);
+}
+
+.box .task-list {
+    box-sizing: border-box;
+    height: 75%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.box .task-list .task {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 2px solid black;
+}
+.box .task-list .task > button {
+    border-radius: 50%;
+    background-color: #000;
+}
+.box .task-list .task .done-item, 
+.box .task-list .task .del-item {
+    width: 10%;
+    height: 80%;
+    margin: 0 5px;
+}
+.box .task-list .task .task-item {
+    font-size: 19.2px;
+    font-size: 1.2rem;
+    overflow: hidden;
+    width: 75%;
+    padding: 0 2%;
+    box-sizing: border-box;
+    text-align: left;
+    height: 100%;
+}
+.box .done .task .task-item {
+    text-decoration-line: line-through;
+}
+
+#footer {
+    background: #000;
+    z-index: 10;
+    color: #fff;
+  box-sizing: border-box;
+  padding: 25px 20px;
+  height: 70px;
+  width: 100%;
+  text-align: center;
+}
