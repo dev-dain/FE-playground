@@ -33,19 +33,20 @@
     width: 30%;
     font-size: 27.2px;
     font-size: 1.7rem;
+    letter-spacing: -0.8px;
+    letter-spacing: -0.05rem;
 }
 
 #box-container {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-around;
     width: 80%;
     height: 81vh;
     margin: 0 auto;
 }
 .box {
-    width: 50%;
-    padding: 0 2.5%;
+    width: 45%;
     box-sizing: border-box;
 }
 .box > div {
@@ -78,6 +79,8 @@
     box-sizing: border-box;
     padding: 0 10px;
     height: 40px;
+    font-size: 16px;
+    font-size: 1rem;
 }
 .box .input-null {
     border: 2px solid red;
@@ -113,7 +116,8 @@
 .box .task-list {
     box-sizing: border-box;
     height: 75%;
-    overflow: hidden;
+    max-height: 75%;
+    overflow-y: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -131,13 +135,33 @@
 }
 .box .task-list .task > button {
     border-radius: 50%;
-    background-color: #000;
+    background-color: #fff;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.box .task-list .task > button:hover {
+    opacity: 1.0;
 }
 .box .task-list .task .done-item, 
 .box .task-list .task .del-item {
     width: 10%;
     height: 80%;
     margin: 0 5px;
+}
+.box .task-list .task .done-item {
+    background-image: url('../img/done.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.box .task-list .task .back {
+    background-image: url('../img/done-back.jpg');
+}
+.box .task-list .task .del-item {
+    background-image: url('../img/del.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .box .task-list .task .task-item {
     font-size: 19.2px;

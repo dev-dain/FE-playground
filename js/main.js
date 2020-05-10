@@ -1,7 +1,72 @@
+const taskList = document.querySelector('.task-list');
+const doneList = document.querySelector('.task-list.done');
+
 const timer = () => {
     const clock = document.querySelector('.clock');
     const today = new Date();
-    clock.innerHTML = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    let h = today.getHours();
+    (h > 12) ? h = 'PM ' + h : h = 'AM ' + h;
+    clock.innerHTML = 
+        `${addZero(h)} : ${addZero(today.getMinutes())} : 
+        ${addZero(today.getSeconds())}`;
+}
+
+const addZero = (num) => {
+    (num < 10 ) ? num = '0' + num : num;
+    return num;
+}
+
+class Task {
+    constructor(task) {
+        const taskDiv = document.createElement('div');
+        const doneItem = document.createElement('button');
+        const taskItem = document.createElement('div');
+        const delItem = document.createElement('button');
+        let flag = false;
+        doneItem.classList = 'done-item';
+        taskItem.classList = 'task-item';
+        delItem.classList = 'del-item';
+        taskItem.innerHTML = task;
+        taskDiv.appendChild(doneItem);
+        taskDiv.appendChild(taskItem);
+        taskDiv.appendChild(delItem);
+    
+        taskDiv.classList = 'task';
+        this._taskDiv = taskDiv;  
+    }
+    get makeTask() {
+        return this._taskDiv;
+    }
+    set reviseTask(task) {
+        this._taskDiv.childNodes[1].innerHTML = task;
+    }
+    poleFlag() {
+        this._flag = !(this._flag);
+        console.log(this._flag);
+    }
+    get flagStatus() {
+        return this._flag;
+    }
+}
+
+const addTask = (task) => {
+    const newTask = new Task(task);
+    newTask.makeTask.childNodes[0].addEventListener('click', function() {
+        if (!newTask.flagStatus) {
+            newTask.makeTask.parentNode.removeChild(newTask.makeTask);
+            newTask.makeTask.childNodes[0].classList += ' back';
+            doneList.appendChild(newTask.makeTask);
+        } else {
+            newTask.makeTask.parentNode.removeChild(newTask.makeTask);
+            newTask.makeTask.childNodes[0].classList = 'done-item';
+            taskList.appendChild(newTask.makeTask);
+        }
+        newTask.poleFlag();
+    });
+    newTask.makeTask.childNodes[2].addEventListener('click', function() {
+        newTask.makeTask.parentNode.removeChild(newTask.makeTask);
+    });
+    return newTask.makeTask;
 }
 
 const start = () => {
@@ -10,24 +75,43 @@ const start = () => {
     
     const taskInput = document.querySelector('.inputTask');
     const addBtn = document.querySelector('.addTask');
-    console.log(addBtn);
+    const taskDelBtn = document.querySelector('.a-delete');
+    const doneDelBtn = document.querySelector('.a-delete.done');
+
     taskInput.addEventListener('focus', function() {
         taskInput.classList = 'inputTask';
-    })
+    });
+    taskInput.addEventListener('blur', function() {
+        taskInput.classList = 'inputTask';
+    });
+    taskInput.addEventListener('keydown', function() {
+        if (window.event.keyCode == 13) {
+            if (taskInput.value.length < 1) {
+                taskInput.classList += ' input-null';
+                taskInput.focus();
+            } else {
+                taskInput.classList = 'inputTask';
+                const newTask = addTask(taskInput.value);
+                taskList.appendChild(newTask);
+                taskInput.value = '';
+            }
+        }
+    });
     addBtn.addEventListener('click', function() {
         if (taskInput.value.length < 1) {
             taskInput.classList += ' input-null';
+        } else {
+            const newTask = addTask(taskInput.value);
+            taskList.appendChild(newTask);
+            taskInput.value = '';
         }
     });
-    window.addEventListener('keydown', function() {
-        if (this.event.keyCode == 13) {
-            if (taskInput.value.length < 1) {
-                taskInput.classList += ' input-null';
-            } else {
-                taskInput.classList = 'inputTask';
-            }
-        }
-    })
+    taskDelBtn.addEventListener('click', function() {
+        taskList.innerHTML = '';
+    });
+    doneDelBtn.addEventListener('click', function() {
+        doneList.innerHTML = '';
+    });
 }
 
 window.onload = start();
