@@ -21,7 +21,7 @@ const addZero = (num) => {
 
 class Task {
     constructor(task) {
-        const taskDiv = document.createElement('div');
+        const taskDiv = document.createElement('li');
         const doneItem = document.createElement('button');
         const taskItem = document.createElement('div');
         const delItem = document.createElement('button');
@@ -103,6 +103,7 @@ const start = () => {
     addBtn.addEventListener('click', function() {
         if (taskInput.value.length < 1) {
             taskInput.classList += ' input-null';
+            taskInput.focus();
         } else {
             const newTask = addTask(taskInput.value);
             taskList.appendChild(newTask);
