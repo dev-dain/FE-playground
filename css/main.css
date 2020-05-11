@@ -300,6 +300,7 @@
         max-height: 70%;
     }
     .box .task-list .task {
+        flex-shrink: 0;
         height: 50px;
         line-height: 50px;
         border-bottom: 2px solid black;
