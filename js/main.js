@@ -5,6 +5,7 @@ const timer = () => {
     const clock = document.querySelector('.clock');
     const today = new Date();
     let h = today.getHours();
+
     if (h == 0) {
         h = 12;
     }
@@ -26,6 +27,7 @@ class Task {
         const taskItem = document.createElement('div');
         const delItem = document.createElement('button');
         let flag = false;
+    
         doneItem.classList = 'done-item';
         taskItem.classList = 'task-item';
         delItem.classList = 'del-item';
@@ -33,27 +35,26 @@ class Task {
         taskDiv.appendChild(doneItem);
         taskDiv.appendChild(taskItem);
         taskDiv.appendChild(delItem);
-    
         taskDiv.classList = 'task';
         this._taskDiv = taskDiv;  
     }
     get makeTask() {
         return this._taskDiv;
     }
+    get flagStatus() {
+        return this._flag;
+    }
     set reviseTask(task) {
         this._taskDiv.childNodes[1].innerHTML = task;
     }
     poleFlag() {
         this._flag = !(this._flag);
-        console.log(this._flag);
-    }
-    get flagStatus() {
-        return this._flag;
     }
 }
 
 const addTask = (task) => {
     const newTask = new Task(task);
+
     newTask.makeTask.childNodes[0].addEventListener('click', function() {
         if (!newTask.flagStatus) {
             newTask.makeTask.parentNode.removeChild(newTask.makeTask);
@@ -69,6 +70,7 @@ const addTask = (task) => {
     newTask.makeTask.childNodes[2].addEventListener('click', function() {
         newTask.makeTask.parentNode.removeChild(newTask.makeTask);
     });
+    
     return newTask.makeTask;
 }
 
