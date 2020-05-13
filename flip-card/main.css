@@ -1,0 +1,59 @@
+* {
+    font-family: Sans-serif;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+#wrap {
+    box-sizing: border-box;
+    width: 900px;
+    height: 900px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 30px;
+    border: 5px solid black;
+    border-radius: 20px;
+    text-align: center;
+}
+h1 {
+    font-size: 40px;
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+.flip-card {
+    width: 50%;
+    height: 80%;
+    margin: 5% 25%;
+    /* transfrom-style에서 3d로 할 때 깊이를 1000px로 정함 
+        이 깊이만큼 3d로 보임 (원근법을 줌)
+        perspective의 숫자가 클수록 멀리서 보는 느낌 */
+    perspective: 1200px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: #aaa 0 3px 10px 5px;
+    /* transform-style은 자식 요소를 2차원으로 배치할지
+    3차원으로 배치할지 결정함 */
+    transform-style: preserve-3d;   /* 이게 포인트 */
+    transition: all 0.6s;
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* backface-visiblity는 기본적으로 visible인데
+    visible로 되어 있으면 원치 않는 반짝임이나 이면이 보일 수 있다고 함 */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.flip-card-back {
+    background-color: #222;
+    color: #eee;
+    transform: rotateY(180deg); /* 이게 없으면 처음부터 back이 나옴 */
+}
