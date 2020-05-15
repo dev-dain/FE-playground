@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
 :root {
-    --success-color: green;
+    --success-color: rgb(70, 206, 70);
     --error-color: red;
 }
 * {
