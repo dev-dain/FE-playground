@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie seat booking</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="movie-container">
+            <label>영화를 고르세요:</label>
+            <select id="movie">
+                <!-- option 태그의 value는 option이 선택됐을 때 전송될 값-->
+                <option value="8">1917 ($8)</option>
+                <option value="10">조조 래빗 ($10)</option>
+                <option value="9">작은 아씨들 ($9)</option>
+                <option value="11">포드 V 페라리 ($11)</option>
+            </select>
+        </div>
+        <ul class="showcase">
+            <li>
+                <div class="seat"></div>
+                <small>N/A</small>
+            </li>
+            <li>
+                <div class="seat selected"></div>
+                <small>선택한 자리</small>
+            </li>
+            <li>
+                <div class="seat occupied"></div>
+                <small>이선좌</small>
+            </li>
+        </ul>
+        <div class="container">
+            <div class="screen"></div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+        </div>
+        <p class="text">
+            <span id="count">0</span> 자리 선택,
+            $<span id="total">0</span> 입니다.
+        </p>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

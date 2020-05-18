@@ -1,0 +1,105 @@
+@charset "utf-8";
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+* {
+  font-family: 'Spoqa Han Sans', 'Sans-serif';
+}
+:root {
+    --selected-color: rgb(124, 232, 240);
+    --occupied-color: #fff;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: rgba(36, 36, 63, 1.0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    min-height: 100vh;
+}
+.movie-container {
+    margin: 15px 0;
+}
+label, p {
+    color: white;
+}
+select {
+    margin-left: 10px;
+    width: 180px;
+    height: 30px;
+    border-radius: 5px;
+    /* apperance: none을 하면 select 버튼이 안 보임 */
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 0px 10px;
+}
+.showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    background-color: rgba(24, 24, 58, 0.5);
+    color: #888;
+    list-style-type: none;
+    margin: 15px 0;
+    padding: 0;
+    border-radius: 10px;
+}
+.showcase > li {
+    display: flex;
+    align-items: center;
+    float: left;
+    padding: 5px 10px;
+    margin: 0 10x;
+}
+.showcase > li > .seat {
+    margin-right: 5px;
+    cursor: default;
+}
+.seat {
+    float: left;
+    width: 15px;
+    height: 12px;
+    margin: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #777;
+    cursor: pointer;
+}
+.selected {
+    background-color: var(--selected-color);
+}
+.occupied {
+    background-color: var(--occupied-color);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    perspective: 1000px;
+    /* perspective를 줘야 rotateX가 제대로 됨 */
+}
+.screen {
+    width: 200px;
+    height: 70px;
+    transform: rotateX(-45deg);
+    background: #fff;
+    box-shadow: #eee 0 4px 12px;
+    margin-bottom: 15px;
+}
+.row {
+    margin-top: 2px;
+}
+.row .seat:nth-of-type(2), .row .seat:nth-last-of-type(3) {
+    margin-right: 20px;
+}
