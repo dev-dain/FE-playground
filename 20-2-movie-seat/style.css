@@ -68,17 +68,21 @@ select {
     float: left;
     width: 15px;
     height: 12px;
-    margin: 3px;
+    margin: 2px 3px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-color: #777;
+    background-color: rgba(103, 103, 131, 0.6);
     cursor: pointer;
+}
+.seat:not(.occupied):hover {
+    transform: scale(1.15);
 }
 .selected {
     background-color: var(--selected-color);
 }
 .occupied {
     background-color: var(--occupied-color);
+    cursor: default;
 }
 .container {
     display: flex;
@@ -102,4 +106,7 @@ select {
 }
 .row .seat:nth-of-type(2), .row .seat:nth-last-of-type(3) {
     margin-right: 20px;
+}
+#count, #total {
+    color: var(--selected-color);
 }
