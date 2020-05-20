@@ -4,4 +4,6 @@
 ## 지금까지 만든 것
 1. [flip card](https://dev-dain.github.io/FE-playground/flip-card)
 2. [to do list](https://dev-dain.github.io/FE-playground/todo-list)
-3. [VanillaJS 20-1: Form Validator](https://dev-dain.github.io/FE-playground/20-1-form-validator)
+3. [VanillaJS 20-1: Form Validator](https://dev-dain.github.io/FE-playground/20-1-form-validator)  
+4. [VanillaJS 20-2: Movie Seat](https://dev-dain.github.io/FE-playground/20-2-movie-seat)
+5. [VanillaJS 20-4: Exchange Rate](https://dev-dain.github.io/FE-playground/20-4-exchange-rate)
