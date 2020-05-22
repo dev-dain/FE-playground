@@ -1,0 +1,103 @@
+@charset "utf-8";
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+
+@keyframes makeVisible {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+:root {
+    --btn-color: rgb(71, 80, 211);
+}
+* {
+    font-family: 'Spoqa Han Sans', 'Sans-serif';
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+#wrap {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: 100vh;
+    position: relative;
+}
+h1 {
+    text-align: center;
+}
+#btn-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+button {
+    border: none;
+    width: 100px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--btn-color);
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px var(--btn-color), 0 5px #888;
+}
+button:active {
+    transform: translateY(5px);
+    box-shadow: 0 0 0 2px var(--btn-color);
+}
+.modal figure {
+    position: absolute;
+    left: 0; top: 0;
+    z-index: 10;
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    display: none;
+    background-color: rgba(64, 64, 64, 0.9);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: makeVisible .2s ease-in-out forwards;
+}
+.modal figure .close {
+    color: #fff;
+    font-weight: bolder;
+    font-size: 32px;
+    font-size: 2rem;
+    align-self: flex-end;
+    margin: 0 50px 10px 0;
+    cursor: pointer;
+    transition: all .2s;
+}
+.modal figure .close:hover {
+    color: red;
+}
+.modal figure .modal-img {
+    width: 80%;
+    margin: 0 auto 20px auto;
+}
+.modal figcaption {
+    color: #eee;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+@media all and (min-width: 768px) {
+    .modal figure .close {
+        margin: 0 80px 20px 0;
+    }
+    .modal figure .modal-img {
+        width: 70%;
+        max-height: 80vh;
+    }
+}
+@media all and (min-width: 1024px) {
+    .modal figure .close {
+        margin: 0 100px 30px 0;
+    }
+    .modal figure .modal-img {
+        width: 60%;
+    }
+}
