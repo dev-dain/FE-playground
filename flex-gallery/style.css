@@ -1,0 +1,144 @@
+@charset "utf-8";
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+
+* {
+    font-family: 'Spoqa Han Sans', 'Sans-serif';
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+div {
+    box-sizing: border-box;
+}
+#wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#modal {
+    display: none;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: rgba(32, 32, 32, 0.9);
+}
+#modal .modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+#modal .modal-content .close {
+    color: #fff;
+    font-size: 32px;
+    font-size: 2rem;
+    font-weight: bolder;
+    transition: color .2s ease-out;
+    cursor: pointer;
+}
+#modal .modal-content .close:hover {
+    color: red;
+}
+#modal .modal-content a {
+    flex: 80%;
+    max-width: 80%;
+}
+#modal .modal-content img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+#wrap > h1, #wrap > p {
+    padding: 0 15px;
+    word-break: keep-all;
+}
+#img-container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    overflow-y: auto;
+}
+.row {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 2%;
+}
+.row > img {
+    width: 100%;
+    padding: 5px 0;
+    object-fit: contain;
+    cursor: pointer;
+}
+#footer {
+    height: 60px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0e3a70+0,43094f+100 */
+    background: #0e3a70; /* Old browsers */
+    background: -moz-linear-gradient(left,  #0e3a70 0%, #43094f 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #0e3a70 0%,#43094f 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #0e3a70 0%,#43094f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e3a70', endColorstr='#43094f',GradientType=1 ); /* IE6-9 */
+    color: #fff;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0 10px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 250;
+}
+#footer img {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    filter: invert(100%);
+    opacity: 0.8;
+    transition: opacity .2s linear;
+}
+#footer img:hover {
+    opacity: 1;
+}
+
+@media all and (min-width: 768px) {
+    #wrap > h1, #wrap > p {
+        padding: 0 25px;
+    }
+    .row {
+        width: 50%;
+        max-width: 50%;
+        padding: 20px 1% 0;
+    }
+    #footer {
+        padding: 0 20px;
+    }
+    #footer img {
+        margin: 0 3px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media all and (min-width: 1024px) {
+    #wrap > h1, #wrap > p {
+        padding: 0 30px;
+    }
+    .row {
+        width: 25%;
+        max-width: 25%;
+        padding: 20px 0.5%;
+    }
+    #footer {
+        height: 70px;
+        padding: 0 30px;
+    }
+    #footer img {
+        width: 40px;
+        height: 40px;
+    }
+}

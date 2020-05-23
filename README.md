@@ -8,3 +8,4 @@
 4. [VanillaJS 20-2: Movie Seat](https://dev-dain.github.io/FE-playground/20-2-movie-seat)
 5. [VanillaJS 20-4: Exchange Rate](https://dev-dain.github.io/FE-playground/20-4-exchange-rate)
 6. [Popup and Modal](https://dev-dain.github.io/FE-playground/popup-modal)
+7. [flex img gallery](https://dev-dain.github.io/FE-playground/flex-gallery)
