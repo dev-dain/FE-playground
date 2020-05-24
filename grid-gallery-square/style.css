@@ -1,0 +1,225 @@
+@charset "utf-8";
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+
+* {
+    font-family: 'Spoqa Han Sans', 'Sans-serif';
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+div {
+    box-sizing: border-box;
+}
+#wrap {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+#wrap > #header, #wrap > #footer {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0e3a70+0,43094f+100 */
+    background: #0e3a70; /* Old browsers */
+    background: -moz-linear-gradient(left,  #0e3a70 0%, #43094f 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #0e3a70 0%,#43094f 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #0e3a70 0%,#43094f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e3a70', endColorstr='#43094f',GradientType=1 ); /* IE6-9 */
+    color: #fff;
+}
+#wrap > #header {
+    padding: 0 15px;
+    word-break: keep-all;
+    border-bottom: 1px solid #ccc;
+}
+#wrap > #header > h1 {
+    font-size: 19.2px;
+    font-size: 1.2rem;
+}
+#wrap > #profile-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 35% 55%;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    align-content: center;
+    text-align: left;
+}
+#wrap > #profile-container > img {
+    grid-area: 1 / 1 / 2 / 2;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+#wrap > #profile-container > .user-info {
+    padding: 15px 0;
+}
+#wrap > #profile-container > .user-info > .user-name {
+    font-weight: 600;
+}
+#wrap > #profile-container > button {
+    width: 100px;
+    margin: 15px auto 0;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(71, 80, 211);
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px rgb(71, 80, 211), 0 5px #888;
+}
+#wrap > #profile-container > button:active {
+    transform: translateY(5px);
+    box-shadow: 0 0 0 2px rgb(71, 80, 211);
+}
+#wrap > #profile-container > button > a {
+    color: #fff;
+    text-decoration: none;
+}
+#wrap > #img-container {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: auto;
+    gap: 10px 10px;
+    justify-content: center;
+    align-content: center;
+    width: 90%;
+    margin: 10px auto;
+}
+#wrap > #img-container > .row > img {
+    width: 100%;
+    object-fit: cover;
+}
+#footer {
+    height: 60px;
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 0 10px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 250;
+}
+#footer > * {
+    margin: 0 10px;
+}
+#footer img {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    filter: invert(100%);
+    opacity: 0.8;
+    transition: opacity .2s linear;
+}
+#footer img:hover {
+    opacity: 1;
+}
+
+@media all and (min-width: 486px) {
+    #wrap > #profile-container {
+        grid-template-columns: 25% 35%;
+    }
+    #wrap > #profile-container > button {
+        width: 110px;
+    }
+}
+
+@media all and (min-width: 768px) {
+    #wrap > #profile-container {
+        padding: 30px;
+        grid-template-columns: 30% 25%;
+        width: 80%;
+    }
+    #wrap > #profile-container > img {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+    }
+    #wrap > #profile-container > .user-info {
+        padding: 25px 0;
+    }
+    #wrap > #profile-container > button {
+        width: 120px;
+        height: 40px;
+        margin: 25px auto 0;
+    }
+    #wrap > #img-container {
+        width: 80%;
+        padding: 0 20px;
+        grid-template-columns: auto auto;
+        gap: 10px 20px;
+    }
+    #wrap > #img-container > .row > img {
+        margin: 10px 0;
+    }
+    #footer {
+        padding: 0 20px;
+    }
+    #footer img {
+        margin: 0 3px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media all and (min-width: 1024px) {
+    #wrap > #profile-container {
+        padding: 35px;
+        grid-template-columns: 30% 25%;
+    }
+    #wrap > #profile-container > img {
+        width: 150px;
+        height: 150px;
+    }
+    #wrap > #profile-container > .user-info {
+        padding: 40px 0;
+    }
+    #wrap > #profile-container > button {
+        width: 130px;
+        height: 45px;
+        margin: 30px auto 0;
+    }
+    #wrap > #img-container {
+        padding: 0 30px;
+        grid-template-columns: auto auto auto auto;
+        gap: 20px 20px;
+    }
+    #footer {
+        height: 70px;
+        padding: 0 30px;
+    }
+    #footer img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media all and (min-width: 1440px) {
+    #wrap > #profile-container {
+        padding: 35px;
+        grid-template-columns: 25% 25%;
+    }
+    #wrap > #profile-container {
+        width: 65%;
+    }
+    #wrap > #profile-container > img {
+        width: 150px;
+        height: 150px;
+    }
+    #wrap > #profile-container > .user-info {
+        padding: 40px 0;
+    }
+    #wrap > #profile-container > button {
+        width: 130px;
+        height: 45px;
+        margin: 30px auto 0;
+    }
+    #wrap > #img-container {
+        width: 65%;
+        padding: 0 30px;
+        grid-template-columns: auto auto auto auto;
+        gap: 20px 20px;
+    }
+}
