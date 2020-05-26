@@ -1,0 +1,218 @@
+@charset "utf-8";
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+:root {
+    --main-color: rgb(99, 214, 174);
+}
+* {
+    font-family: 'Spoqa Han Sans', 'Sans-serif';
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+header, nav, section, article {
+    display: block;
+}
+div {
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+    min-height: 100%;
+    transition: all .3s ease-in-out;
+    /* nav가 부드럽게 나오는 효과*/
+}
+.show-nav {
+    transform: translateX(200px);
+}
+nav {
+    min-height: 100vh;
+    z-index: 1;
+    width: 200px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    /* fixed이기 때문에 left: -150px을 주지 말고 translate를 해야 함 */
+    background: rgb(47, 37, 102);
+}
+nav .logo {
+    padding: 30px 0 15px;
+    text-align: center; /* 이게 없으면 사진 가운데 정렬이 안 됨 */
+}
+nav .logo img {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    padding: 15px 20px;
+    border-top: rgba(128, 128, 128, 0.5) solid 1px;
+}
+nav ul li:last-of-type {
+    border-bottom: rgba(128, 128, 128, 0.5) solid 1px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #eee;
+}
+.modal-container {
+    display: none;
+}
+.show-modal {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    background: rgb(0, 0, 0, 0.9);
+    width: 100%;
+    min-height: 100%;
+    display: block;
+}
+.show-modal .modal {
+    background: #fff;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20vh;
+    border-radius: 5px;
+}
+.show-modal .modal .modal-header {
+    text-align: center;
+    background: rgb(47, 37, 102);
+    color: #fff;
+    padding: 10px 20px;
+    vertical-align: middle;
+}
+.show-modal .modal .modal-header:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.show-modal .modal .modal-header p {
+    display: block;
+    float: left;
+    font-size: 24px;
+    font-size: 1.5rem;
+    margin: 0;
+}
+.show-modal .modal .modal-header span {
+    display: block;
+    float: right;
+    font-size: 32px;
+    font-size: 2rem;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.show-modal .modal .modal-content {
+    padding: 20px;
+}
+.show-modal .modal .modal-content input {
+    border-top: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+    padding: 0 10px;
+    font-size: 16px;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+.show-modal .modal .modal-content input[type="submit"] {
+    max-width: 30%;
+    height: 40px;
+    background: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#header {
+    text-align: center;
+    background: rgb(47, 37, 102);
+    color: #fff;
+    text-shadow: #666 2px 2px 3px;
+    padding: 30px;
+    position: relative;
+}
+#header:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+#toggle {
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: rgba(21, 12, 73, 0.5);
+    border-radius: 5px;
+    position: absolute;
+    cursor: pointer;
+    top: 15px;
+    left: 15px;
+}
+#toggle #menu-icon {
+    display: inline-block;
+    background: #fff;
+    width: 80%;
+    margin: 0 auto;
+    min-height: 4px;
+    position: relative;
+    vertical-align: middle;
+}
+#toggle #menu-icon:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -8px;
+    background: #fff;
+    width: 100%;
+    min-height: 4px;
+}
+#toggle #menu-icon:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 8px;
+    background: #fff;
+    width: 100%;
+    min-height: 4px;
+}
+#header > h1 {
+    font-size: 40px;
+    font-size: 2.5rem;
+}
+#header > p {
+    font-size: 19.2px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+#header > #show-modal {
+    border: none;
+    border-radius: 10px;
+    min-width: 120px;
+    height: 45px;
+    padding: 10px;
+    background: rgb(64, 197, 151);
+    color: #eee;
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+section {
+    padding: 10px 20px;
+    max-width: 768px;
+    margin: 0 auto;
+    word-break: keep-all;
+}
+article > p {
+    font-size: 15.2px;
+    font-size: 0.95rem;
+    line-height: 17.6px;
+    line-height: 1.1rem;
+}
