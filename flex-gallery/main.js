@@ -10,6 +10,7 @@ let avrgPadding = 0;
 imgContainer.addEventListener('click', function(e) {
     if (e.target.nodeName === 'IMG') {
         modal.style.display = 'block';
+        modal.classList.toggle('grayBlur');
         newImgAnchor.href = e.target.src;
         newImgAnchor.title = e.target.alt;
         newImgAnchor.target = '_blank';
@@ -28,5 +29,6 @@ imgContainer.addEventListener('click', function(e) {
 });
 close.addEventListener('click', function() {
     modal.style.display = 'none';
+    modal.classList.toggle('grayBlur');
     modalContent.removeChild(newImgAnchor);
 });
