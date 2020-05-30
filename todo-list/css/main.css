@@ -1,5 +1,12 @@
 @charset "utf-8";
 @import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+:root {
+    --done-color: rgba(39, 102, 238, 0.85);
+    --done-color-h: rgba(39, 102, 238, 1.0);
+    --del-color: rgba(238, 39, 39, 0.85);
+    --del-color-h: rgba(238, 39, 39, 1.0);
+    --back-color-h: rgba(41, 209, 125, 1.0);
+}
 * {
   font-family: 'Spoqa Han Sans', 'Sans-serif'; 
 }
@@ -106,18 +113,18 @@
     cursor: pointer;
 }
 .box .addTask {
-    background: rgba(39, 102, 238, 0.9);
+    background: var(--done-color);
 }
 .box .addTask:hover {
-    background: rgba(39, 102, 238, 1.0);
+    background: var(--done-color-h);
 }
 .box .a-delete {
     width: 40%;
     margin: 10px 30%;
-    background: rgba(238, 39, 39, 0.9);
+    background: var(--del-color);
 }
 .box .a-delete:hover {
-    background: rgba(238, 39, 39, 1.0);
+    background: var(--del-color-h);
 }
 .box .task-list {
     display: flex;
@@ -151,21 +158,18 @@
     width: 10%;
     height: 80%;
     margin: 0 5px;
+    font-size: 24px;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 .box .task-list .task .done-item {
-    background-image: url('../img/done.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    color: var(--done-color-h);
 }
 .box .task-list .task .back {
-    background-image: url('../img/done-back.jpg');
+    color: var(--back-color-h);
 }
 .box .task-list .task .del-item {
-    background-image: url('../img/del.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    color: var(--del-color-h);
 }
 .box .task-list .task .task-item {
     overflow: hidden;
@@ -301,6 +305,11 @@
         line-height: 50px;
         border-bottom: 2px solid black;
     }
+    .box .task-list .task .done-item, 
+    .box .task-list .task .del-item {
+        font-size: 28.8px;
+        font-size: 1.8rem;
+    }
     .box .task-list .task .task-item {
         font-size: 17.6px;
         font-size: 1.1rem;
@@ -347,6 +356,11 @@
     .box .task-list .task {
         height: 60px;
         line-height: 60px;
+    }
+    .box .task-list .task .done-item, 
+    .box .task-list .task .del-item {
+        font-size: 35.2px;
+        font-size: 2.2rem;
     }
     .box .task-list .task .task-item {
         font-size: 19.2px;

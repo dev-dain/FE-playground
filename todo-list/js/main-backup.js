@@ -29,10 +29,8 @@ class Task {
         let flag = false;
     
         doneItem.classList = 'done-item';
-        doneItem.innerHTML = '&#10003;';
         taskItem.classList = 'task-item';
         delItem.classList = 'del-item';
-        delItem.innerHTML = '&#215;';
         taskItem.innerHTML = task;
         taskDiv.appendChild(doneItem);
         taskDiv.appendChild(taskItem);
