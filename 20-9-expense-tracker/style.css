@@ -1,0 +1,113 @@
+@charset "utf-8";
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+:root {
+    --plus-color: rgb(48, 230, 145);
+    --minus-color: rgb(230, 48, 100);
+}
+* {
+  font-family: 'Spoqa Han Sans', 'Sans-serif';
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: rgb(247, 247, 247);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#wrap {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  margin: 0 auto;
+  height: 100vh;
+}
+.inc-exp-wrap {
+  padding: 5%;
+  display: flex;
+  text-align: center;
+  background: #fff;
+  box-shadow: #ddd 2px 2px 5px;
+}
+.inc-exp-wrap div {
+  width: 50%;
+}
+.inc-exp-wrap div > * {
+  margin: 0;
+}
+.inc-exp-wrap div:first-of-type {
+  border-right: 1px rgba(0, 0, 0, 0.15) solid;
+}
+.money {
+  font-weight: bold;
+}
+.inc-exp-wrap div .plus {
+  color: var(--plus-color);
+}
+.inc-exp-wrap div .minus {
+  color: var(--minus-color);
+}
+.list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.list > li {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 7.5px;
+  background-color: #fff;
+  box-shadow: -2px 2px 5px 1px #ddd;
+  margin-bottom: 10px;
+}
+.list > li:hover .delete-btn {
+  opacity: 1;
+}
+.list > .plus {
+  border-right: 5px solid var(--plus-color);
+}
+.list > .minus {
+  border-right: 5px solid var(--minus-color);
+}
+.list > li > button {
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  transform: translateX(-30px);
+  border: none;
+  transition: opacity 0.3s;
+}
+.delete-btn {
+  background: red;
+  color: #fff;
+  font-size: 19.2px;
+  font-size: 1.2rem;
+  opacity: 0;
+}
+h3 {
+  padding-bottom: 10px;
+  border-bottom: 1px rgba(0, 0, 0, 0.25) solid;
+}
+input {
+  width: 100%;
+  padding: 0 10px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 10px 0;
+}
+.btn {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgb(174, 144, 243);
+  color: #fff;
+  padding: 7.5px;
+  font-size: 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
