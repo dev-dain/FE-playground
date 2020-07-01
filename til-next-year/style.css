@@ -15,6 +15,7 @@ h1 { font-size: 24px; }
   height: 100vh;
   background-image: url('https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -52,13 +53,6 @@ a {
   text-decoration: none;
 }
 
-mark {
-  padding: 5px;
-  background: rgba(253, 252, 191, 0.8);
-  color: #444;
-  text-shadow: none;
-}
-
 .content {
   flex: 80%;
   display: flex;
@@ -66,10 +60,19 @@ mark {
   justify-content: center;
 }
 
-.footer { flex: 10%; }
+.footer { 
+  flex: 10%; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+}
+
+input[type="range"] { width: 100%; }
 
 .source {
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 5px;
   padding: 10px;

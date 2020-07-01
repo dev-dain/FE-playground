@@ -14,9 +14,37 @@ function clock() {
     `${parseInt((h - parseInt(h)) * 60)} 분  ${parseInt((m - parseInt(m)) * 60)} 초  `;
 }
 
+function displayBGImg(overlay, range) {
+  let rangeVal = parseFloat(localStorage.getItem('range'));
+  if (localStorage.getItem('range')) {
+    overlay.style.backgroundColor = `rgba(0, 0, 0, ${rangeVal})`;
+    range.value = rangeVal * 25;
+  }
+}
+
 function start() {
+  const fileInput = document.querySelector('.file-upload');
+  const range = document.querySelector('.range');
+  const wrap = document.getElementById('wrap');
+  const overlay = document.querySelector('.overlay');
+  const source = document.querySelector('.source');
   clock();
   setInterval(clock, 1000);
+  displayBGImg(overlay, range);
+  
+  fileInput.addEventListener('change', function(e) {
+    try {
+      let tempPath = URL.createObjectURL(e.target.files[0]);
+      wrap.style.backgroundImage = `url('${tempPath}')`;
+      source.style.display = 'none';
+    } catch {
+      console.log('error!');
+    }
+  });
+  range.addEventListener('change', function() {
+    overlay.style.backgroundColor = `rgba(0, 0, 0, ${0.04 * range.value})`
+    localStorage.setItem('range', 0.04 * range.value);
+  });
 }
 
 window.onload = start();
