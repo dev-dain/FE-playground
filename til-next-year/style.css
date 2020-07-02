@@ -35,6 +35,7 @@ h1 { font-size: 24px; }
 .header {
   flex: 10%;
   padding-top: 10px;
+  width: 100%;
 }
 
 .github {
@@ -58,23 +59,37 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 
 .footer { 
   flex: 10%; 
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
   padding-bottom: 20px;
 }
+.footer > * {
+  margin: 10px;
+  width: 100%;
+}
 
-input[type="range"] { width: 100%; }
-
+.range { max-width: 240px;}
+.custom-path { 
+  width: 70%;
+  max-width: 240px;
+  padding: 5px; 
+  border: none;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
 .source {
   position: fixed;
   right: 0;
-  bottom: 5px;
+  top: 0;
+  width: auto;
   padding: 10px;
   border: 2px #ddd solid;
   border-radius: 5px;
@@ -91,4 +106,6 @@ input[type="range"] { width: 100%; }
 
 @media (min-width: 486px) {
   h1 { font-size: 32px; }
+  .range { max-width: 400px; }
+  .custom-path { max-width: 400px; }
 }
